@@ -2,16 +2,42 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class MainClassTest {
+public class MainClassTest
+
+{
 
     MainClass localNumber = new MainClass();
 
+
     @Test
+
+    public void testGetClassNumber ()
+
+    {
+        int a = localNumber.getClassNumber();
+      //  assertTrue("testGetClassNumber Failed", a >45);
+
+        if (a>45)
+
+        {
+            System.out.println("testGetClassNumber Done");
+        } else
+
+        {
+            System.out.println("testGetClassNumber Failed");
+        }
+
+
+    }
+
+
+@Test
+
     public void testGetLocalNumber ()
         {
-int a = localNumber.getLocalNumber();
+            int a = localNumber.getLocalNumber();
 
-//assertTrue("Do not 14", a == 14);
+          //  assertTrue("testGetLocalNumber Failed", a == 14);
 
             if (a==14)
 
@@ -22,8 +48,6 @@ int a = localNumber.getLocalNumber();
                 {
                     System.out.println("testGetLocalNumber Failed");
                 }
-
-
         }
 
 
