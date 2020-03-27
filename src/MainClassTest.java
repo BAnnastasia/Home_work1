@@ -1,3 +1,5 @@
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
@@ -6,51 +8,39 @@ public class MainClassTest
 
 {
 
-    MainClass localNumber = new MainClass();
+    MainClass local = new MainClass();
+
+    @Before
+
+    public void textStartTest()
+
+    {System.out.println("Start test");}
+
+    @After
+    public void textEndTest()
+
+    {System.out.println("End test");}
 
 
     @Test
 
-    public void testGetClassNumber ()
+    public void testGetClassString ()
 
     {
-        int a = localNumber.getClassNumber();
-      //  assertTrue("testGetClassNumber Failed", a >45);
+        String a = local.getClassString();
+        a=a.toLowerCase();
 
-        if (a>45)
 
-        {
-            System.out.println("testGetClassNumber Done");
-        } else
+        assertTrue("getClassString Failed",a.contains("hello")==true );
 
-        {
-            System.out.println("testGetClassNumber Failed");
-        }
 
+      /*if(a.contains("hello")==true)
+      {
+          System.out.println("есть слово");
+      }else
+          System.out.println("нет слова");*/
 
     }
-
-
-@Test
-
-    public void testGetLocalNumber ()
-        {
-            int a = localNumber.getLocalNumber();
-
-          //  assertTrue("testGetLocalNumber Failed", a == 14);
-
-            if (a==14)
-
-            {
-                System.out.println("testGetLocalNumber Done");
-            } else
-
-                {
-                    System.out.println("testGetLocalNumber Failed");
-                }
-        }
-
-
 
 
 }
